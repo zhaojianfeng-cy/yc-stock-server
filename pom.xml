@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.artcreation.boot</groupId>
+        <artifactId>artcreation-boot-project-parent</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.artcreation.group</groupId>
+    <artifactId>yc-stock-server</artifactId>
+    <version>3.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>yc-stock-server</name>
+    <description>Demo project for Spring Boot</description>
+
+    <modules>
+        <module>yc-stock-server-api</module>
+        <module>yc-stock-server-webapp-provider</module>
+    </modules>
+
+    <properties>
+        <api.version>3.0.0-SNAPSHOT</api.version>
+        <provider.version>3.0.0-SNAPSHOT</provider.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.artcreation.group</groupId>
+                <artifactId>yc-stock-server-api</artifactId>
+                <version>${api.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <api.version>3.0.0-SNAPSHOT</api.version>
+                <provider.version>3.0.0-SNAPSHOT</provider.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <api.version>3.0.0-SNAPSHOT</api.version>
+                <provider.version>3.0.0-SNAPSHOT</provider.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <api.version>3.0.0</api.version>
+                <provider.version>3.0.0</provider.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>master</id>
+            <properties>
+                <api.version>3.0.0</api.version>
+                <provider.version>3.0.0</provider.version>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>yc-central</id>
+            <name>public Repository</name>
+            <url>http://47.115.177.104:7003/repository/maven-public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>yc-plugin-central</id>
+            <url>http://47.115.177.104:7003/repository/maven-public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

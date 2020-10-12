@@ -1,0 +1,16 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /stock
+spring:
+  application:
+    name: yc-stock-server-webapp-provider
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+stock:
+  pay:
+    body: 陶瓷
+    time: 2020-10-08

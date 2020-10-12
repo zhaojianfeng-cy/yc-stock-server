@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: yc-stock-server-webapp-provider
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
